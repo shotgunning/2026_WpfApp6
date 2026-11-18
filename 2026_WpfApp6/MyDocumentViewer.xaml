@@ -24,29 +24,29 @@
                 <Button x:Name="SaveButton" Height="38" Width="38" Command="ApplicationCommands.Save">
                     <Image Height="32" Width="32" Source="img/save.png"/>
                 </Button>
-                <Button x:Name="TrashButton" Height="38" Width="38" >
+                <Button x:Name="TrashButton" Height="38" Width="38" Click="TrashButton_Click" >
                     <Image Height="32" Width="32" Source="img/trash.png"/>
                 </Button>
             </ToolBar>
             <ToolBar x:Name="EditingToolbar" Height="40" Width="612" Background="#FFEEDDAC">
-                <ToggleButton x:Name="BoldButton" Height="38" Width="38">
+                <ToggleButton x:Name="BoldButton" Height="38" Width="38" Command="EditingCommands.ToggleBold">
                     <Image Height="32" Width="32" Source="img/bold.png" />
                 </ToggleButton>
-                <ToggleButton x:Name="ItalicButton" Height="38" Width="38">
+                <ToggleButton x:Name="ItalicButton" Height="38" Width="38" Command="EditingCommands.ToggleItalic">
                     <Image Height="32" Width="32" Source="img/italic.png" />
                 </ToggleButton>
-                <ToggleButton x:Name="UnderlineButton" Height="38" Width="38">
+                <ToggleButton x:Name="UnderlineButton" Height="38" Width="38" Command="EditingCommands.ToggleUnderline">
                     <Image Height="32" Width="32" Source="img/underline.png" />
                 </ToggleButton>
-                <xctk:ColorPicker x:Name="FontColorPicker" Width="160" Height="38"/>
+                <xctk:ColorPicker x:Name="FontColorPicker" Width="150" Height="38" Margin="5,0,0,0" SelectedColorChanged="FontColorPicker_SelectedColorChanged"/>
                 <ComboBox x:Name="FontFamilyComboBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="
-                          150" Height="38" Margin="5,0,0,0"/>
+                          150" Height="38" Margin="5,0,0,0" SelectionChanged="FontFamilyComboBox_SelectionChanged"/>
                 <ComboBox x:Name="FontSizeComboBox" HorizontalAlignment="Left" VerticalAlignment="Center" Width="
-                          50" Height="38" Margin="5,0,0,0"/>
+                          50" Height="38" Margin="5,0,0,0" SelectionChanged="FontSizeComboBox_SelectionChanged"/>
             </ToolBar>
         </ToolBarTray>
         <StatusBar Height="30" DockPanel.Dock="Bottom" Background="LightGray"/>
-        <RichTextBox x:Name="MainRichTextBox" Background="#FFEFEFEC">
+        <RichTextBox x:Name="MainRichTextBox" Background="#FFEFEFEC" SelectionChanged="MainRichTextBox_SelectionChanged">
             <FlowDocument/>
         </RichTextBox>
     </DockPanel>
