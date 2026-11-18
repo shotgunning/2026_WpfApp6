@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="5.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="img\bold.png" />
     <Resource Include="img\italic.png" />
     <Resource Include="img\new.png" />
